@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
-
+using Tarea1.View;
 namespace Tarea1
 {
 	public partial class App : Application
@@ -13,7 +13,7 @@ namespace Tarea1
 		{
 			InitializeComponent();
 
-			MainPage = new Tarea1.MainPage();
+			MainPage = new Tarea1.View.MainPage();
 		}
 
 		protected override void OnStart ()

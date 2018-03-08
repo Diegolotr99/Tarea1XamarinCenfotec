@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1.View.MainPage">
+    <ContentPage.Content>
+        <StackLayout Padding="5,5,5,5">
+            <ContentView Padding="0,25,0,0">
+                <Label Text="Welcome to Tarea 1 - Xamarin Cenfotec"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   TextColor="Black" Font="20"  />
+            </ContentView>
+            <StackLayout>
+                <Label />
+                <BoxView HeightRequest="1" BackgroundColor="Black"  HorizontalOptions="FillAndExpand" />
+                <Label />
+            </StackLayout>
+            <ListView x:Name="lst">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+
+                                <Label Text="{Binding Name}" TextColor="Black" Font="18">
+                                    </Label>
+                                <Label Text="{Binding LastName}" Font="18" TextColor="Gray">
+                                    </Label>
+                                <Label Text="{Binding Age}" Font="18" TextColor="LightSlateGray">
+                                </Label>
+
+                                <Image Source="{Binding Imgsource}" HeightRequest="30" WidthRequest="50" Margin="5,5,5,5" HorizontalOptions="EndAndExpand"></Image>
+                            </StackLayout>
+                        </ViewCell>    
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+           <StackLayout Orientation="Horizontal" >
+                <Label Text="Filter List: " TextColor="Black" Font="20"></Label>
+           </StackLayout>
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Clicked="Button_Clicked" Text="Carlos y Francisco" Grid.Row="0" Grid.Column="0"></Button>
+                <Button Clicked="Button_Clicked_Age" Text="Age >= 50" Grid.Row="0" Grid.Column="1" ></Button>
+                <Button Clicked="Button_Clicked_Men" Text="Men" Grid.Row="1" Grid.Column="0"></Button>
+                <Button Clicked="Button_Clicked_Women" Text="Women" Grid.Row="1" Grid.Column="1"></Button>
+                <Button Clicked="Button_Clicked_Reset" Text="Clear" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Button>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
