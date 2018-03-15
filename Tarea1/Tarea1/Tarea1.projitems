@@ -15,14 +15,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Article.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Client.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ClientModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Sale.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SaleLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ClientViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\ClientDetail.xaml.cs">
+      <DependentUpon>ClientDetail.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\PersonDetail.xaml.cs">
-      <DependentUpon>PersonDetail.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)View\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -33,7 +36,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PersonDetail.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ClientDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

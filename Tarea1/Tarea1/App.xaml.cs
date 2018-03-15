@@ -13,8 +13,11 @@ namespace Tarea1
 		{
 			InitializeComponent();
 
-			MainPage = new Tarea1.View.MainPage();
-		}
+
+
+            //MainPage = new Tarea1.View.MainPage();
+            MainPage = new Tarea1.View.ClientDetail();
+        }
 
 		protected override void OnStart ()
 		{

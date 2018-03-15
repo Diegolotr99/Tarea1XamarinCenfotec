@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tarea1.View.ClientDetail">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="LightBlue" Padding="10">
+            <Label Text="Client Details" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Font="28"  TextColor="Black" FontAttributes="Bold" Margin="0,10,0,10"/>
+          </StackLayout>
+            <StackLayout>
+                <Grid Padding="5,5,5,5" ColumnSpacing="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding ActualClient.Imgsource}"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  HeightRequest="100" WidthRequest="100" Margin="15,0,0,0"></Image>
+                    <Label Text="ID:" Grid.Row="0" Grid.Column="1" Margin="20,30,0,0" Font="16" VerticalOptions="Center" FontAttributes="Bold" ></Label>
+                    <Label Text="Full Name:" Grid.Row="1" Grid.Column="1" Margin="20,0,0,0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ActualClient.ID}"  Grid.Row="0" Grid.Column="2" Margin="0,30,0,0" Font="16" VerticalOptions="Center"></Label>
+                    <Label Text="{Binding ActualClient.FullName}"  Grid.Row="1" Grid.Column="2" Font="16" VerticalOptions="Center"></Label>
+                </Grid>
+            </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="50,0,0,10">
+            <Grid Padding="5,5,5,5" ColumnSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Age:"  Grid.Row="0" Grid.Column="0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ActualClient.Age}"  Grid.Row="0" Grid.Column="1" Font="16" VerticalOptions="Center"></Label>
+                    <Label Text="Email:"  Grid.Row="1" Grid.Column="0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ActualClient.Email}"  Grid.Row="1" Grid.Column="1" Font="16" VerticalOptions="Center"></Label>
+                    <Label Text="Address:"  Grid.Row="2" Grid.Column="0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ActualClient.Address}"  Grid.Row="2" Grid.Column="1" Font="16" VerticalOptions="Center"></Label>
+                </Grid>
+        </StackLayout>
+        <StackLayout>
+                <ListView x:Name="lstVSales" ItemsSource="{Binding ActualClient.ListSales}">
+                    <ListView.Header>
+                        <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,5,5,5">
+                                <Label Text="Client Sales" TextColor="Black" Font="24" HorizontalOptions="CenterAndExpand" Margin="-10,0,0,0" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,5,5,5">
+                            <Label Text="Sale ID" TextColor="Black" Font="20" HorizontalOptions="StartAndExpand" Margin="10,0,0,0"/>
+                            <Label Text="Sale Date" TextColor="Black" Font="20" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="Sale Total $" TextColor="Black" Font="20" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="{Binding ID}" TextColor="Black" Font="18" HorizontalOptions="StartAndExpand" Margin="35,0,0,0" />
+                                    <Label Text="{Binding SaleDateString}" TextColor="Gray" Font="18" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"  />
+                                    <Label Text="$123" TextColor="Gray" Font="18" HorizontalOptions="EndAndExpand" Margin="0,0,40,0" />
+                                </StackLayout>
+                            </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+      </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
