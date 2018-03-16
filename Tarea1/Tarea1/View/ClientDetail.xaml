@@ -12,6 +12,9 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -19,13 +22,20 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding ActualClient.Imgsource}"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"  HeightRequest="100" WidthRequest="100" Margin="15,0,0,0"></Image>
-                    <Label Text="ID:" Grid.Row="0" Grid.Column="1" Margin="20,30,0,0" Font="16" VerticalOptions="Center" FontAttributes="Bold" ></Label>
-                    <Label Text="Full Name:" Grid.Row="1" Grid.Column="1" Margin="20,0,0,0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
-                    <Label Text="{Binding ActualClient.ID}"  Grid.Row="0" Grid.Column="2" Margin="0,30,0,0" Font="16" VerticalOptions="Center"></Label>
-                    <Label Text="{Binding ActualClient.FullName}"  Grid.Row="1" Grid.Column="2" Font="16" VerticalOptions="Center"></Label>
+                    <Label Text="ID:" Grid.Row="0" Grid.Column="1" Font="16" FontAttributes="Bold"  Margin="0,30,0,0" ></Label>
+                    <Label Text="Full Name:" Grid.Row="1" Grid.Column="1" XAlign="Center" YAlign="Start" Font="16"  FontAttributes="Bold"></Label>
+                    <Label Text="{Binding ActualClient.ID}"  Grid.Row="0" Grid.Column="2" Font="16" Margin="0,30,0,0"></Label>
+                    <Label Text="{Binding ActualClient.FullName}"  Grid.Row="1" Grid.Column="2" Font="16" XAlign="Center" YAlign="Start" ></Label>
+                    <Label Text="Age:"  Grid.Row="2" Grid.Column="0" Font="16" FontAttributes="Bold" XAlign="Center" YAlign="Center"></Label>
+                    <Label Text="{Binding ActualClient.Age}"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Font="16"  XAlign="Start" YAlign="Center"></Label>
+                    <Label Text="Email:"  Grid.Row="3" Grid.Column="0" Font="16" FontAttributes="Bold"  XAlign="Center" YAlign="Center"></Label>
+                    <Label Text="{Binding ActualClient.Email}"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Font="16"></Label>
+                    <Label Text="Address:"  Grid.Row="4" Grid.Column="0" Font="16"  FontAttributes="Bold"  XAlign="Center" YAlign="Center"></Label>
+                    <Label Text="{Binding ActualClient.Address}"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Font="16"></Label>
+
                 </Grid>
             </StackLayout>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="50,0,0,10">
+        <!--<StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="50,0,0,10">
             <Grid Padding="5,5,5,5" ColumnSpacing="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -43,7 +53,7 @@
                     <Label Text="Address:"  Grid.Row="2" Grid.Column="0" Font="16" VerticalOptions="Center" FontAttributes="Bold"></Label>
                     <Label Text="{Binding ActualClient.Address}"  Grid.Row="2" Grid.Column="1" Font="16" VerticalOptions="Center"></Label>
                 </Grid>
-        </StackLayout>
+        </StackLayout>-->
         <StackLayout>
                 <ListView x:Name="lstVSales" ItemsSource="{Binding ActualClient.ListSales}">
                     <ListView.Header>
